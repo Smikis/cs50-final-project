@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+<div style="margin-top: .5rem; margin-left: .5rem;">
+  <div id="profile-card" style="padding-top: .5rem; display:grid; grid-template-columns: repeat(3, 200px); justify-content: center; background-color: red; width: 90%; height: 500px;">
+    <div id="user-info" style="align-self: center; justify-self: center; text-align: center;">
+      <div id="user-pfp">PFP</div>
+      <h3 id="user-name">{{session["username"]}}</h3>
+    </div>
+    <div id="user-data">
+      <div>
+        <h5>Joined: TBD</h5>
+      </div>
+      <h5>Friends count: {{session["friends"] | length}}</h5>
+    </div>
+    <div id="">
+      asddd
+    </div>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body%}
+<div style="display: flex; justify-content: center; padding: 10px 0;">
+    <div class="bg-dark" id="container">
+        <div id="friend-list"></div>
+        <div id="chat-box">
+            <div id="chat-window"></div>
+            <form id="message-box" class="input-group mb-3" style="gap:.5rem; padding: .5rem"></form>
+        </div>
+    </div>
+</div>
+    <script>
+        //var dashboard_socket = io({transports: ['websocket']});
+        var dashboard_socket = io()
+
+        dashboard_socket.on('connect', () => {
+            dashboard_socket.emit('display_friends');
+        });
+
+        dashboard_socket.on('response', data => {
+            display_friends(data);
+        });
+
+        window.addEventListener("beforeunload", () => {
+            navigator.sendBeacon('/stop_threads');
+        });
+
+        function display_messages(user)
+        {
+            dashboard_socket.emit('display_messages', data = user)
+        }
+
+        dashboard_socket.on('updated_messages', data => {
+            display_messages(data)
+        })
+
+        dashboard_socket.on('messages_response', data => {
+            show_messages(data);
+        });
+
+        function update_messages(user)
+        {
+            dashboard_socket.emit('update_messages', user = user);
+        }
+    </script>
+{% endblock %}

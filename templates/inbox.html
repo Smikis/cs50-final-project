@@ -1,0 +1,35 @@
+{% extends "layout.html"%}
+
+{% block title %}Inbox{% endblock %}
+
+{% block body %}
+<div style="display: flex; justify-content: center; padding: 10px 0;">
+<div id="container" style="display: flex; gap: .5rem; width: 50%; margin-left: .5rem; margin-right: .5rem; padding: .5rem; height: fit-content;">
+    <div class="table-responsive" style="margin: .5rem; width: 100%; border-radius: .5rem;">
+        <table id="dtBasicExample" class="table table-bordered table-dark">
+            <thead>
+                <tr>
+                    <th scope="col" style="text-align: center;width: 200px;">Username</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody id="display" style="text-align: center;">
+                {% if not requests %}
+                        <tr><td colspan="2" style="font-style: italic;">No requests received</td></tr>
+                {% else %}
+                    {% for receiver in requests %}
+                        <tr style="text-align: center;">
+                            <td style="font-size: 20px">{{receiver["sender"]}}</td>
+                            <td>
+                                <button onclick="send_request('accept', this)" style="margin-right: .5rem;" class="btn btn-outline-light" id="{{receiver['sender']}}" type="submit">Accept</button>
+                                <button onclick="send_request('decline', this)" style="color: white; text-decoration: none; background: none!important; border: none; padding: 0!important;" id="{{receiver['sender']}}" type="submit">Decline</button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+{% endblock %}

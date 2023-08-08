@@ -1,0 +1,159 @@
+.btn-outline-light
+{
+    border-color: coral;
+}
+
+.btn-outline-light:hover
+{
+    background-color: coral;
+    border-color: coral;
+}
+
+.btn:focus , .btn-outline-light:focus
+{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.dropdown-item:focus, .dropdown-item:hover
+{
+    background-color: rgba(136, 136, 136, 0) !important; 
+}
+
+.form-control:focus
+{
+    box-shadow: none;
+    border-color: none;
+    outline: coral auto 5px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+/* Track */
+::-webkit-scrollbar-track {
+  background: 0;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: .5rem;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(95, 95, 95);
+}
+
+.styled-list {
+  list-style: none;
+  max-width: 100%;
+  padding: 0;
+}
+
+#message{
+  width: max-content; 
+  max-width: 20rem;
+  text-align: left; 
+  background-color: coral; 
+  padding: .5rem;
+  margin-right: .25rem;
+  margin-bottom: .25rem;
+}
+
+#sent{
+  width: 100%; 
+  display:flex;
+  justify-content: right;
+}
+
+#received{
+  width: 100%; 
+  display: flex;
+  justify-content: left;
+}
+
+.msg-sent{
+  border-radius: .5rem .5rem 0 .5rem;
+}
+
+.msg-rec{
+  border-radius: .5rem .5rem .5rem 0;
+}
+
+.border-danger{
+    border-color: coral !important;
+}
+
+.text-danger{
+    color: coral !important;
+}
+
+#friend_box{
+  display: flex; 
+  justify-content: center;
+}
+
+#friend:hover {
+  cursor:pointer;
+}
+
+#friend{
+  display: flex; 
+  padding: .5rem; 
+  border-radius:.25rem; 
+  background-color: #555; 
+  width: 90%; 
+  height: 100px; 
+  margin: .25rem; 
+  margin-top: 1rem;
+}
+
+#pfp_circle{
+  height: 50px; 
+  width: 50px; 
+  background-color: #bbb; 
+  border-radius: 50%; 
+  display: inline-block;
+}
+
+#container{
+  display: flex; 
+  gap: .5rem; 
+  border-radius: .5rem; 
+  width: 100%; 
+  margin-left: .5rem; 
+  margin-right: .5rem; 
+  padding: .5rem; 
+  height: fit-content;
+}
+
+#friend-list{
+  overflow-y: auto; 
+  gap: .5rem; 
+  background-color: rgb(59, 59, 59); 
+  width: 400px; 
+  height: 600px;
+}
+
+#chat-box{
+  background-color: rgb(59, 59, 59); 
+  width: 100%; 
+  height: 600px; 
+}
+
+#chat-window{
+  overflow: auto; 
+  background-color: rgb(59, 59, 59); 
+  width: 100%; 
+  height: 550px; 
+  padding-top: .5rem; 
+  padding-left: .25rem;
+}
+
+#message-box{
+  border-top: 1px solid white ;
+}

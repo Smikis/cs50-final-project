@@ -1,0 +1,115 @@
+{% extends "layout.html"%}
+
+{% block title %}Home{% endblock %}
+
+{% block body%}
+<div>
+    <h1 style="text-align: center;">News</h1>
+    <div>
+        <div class="card-deck">
+            <div class="card mb-3" style="min-height: 650px !important; max-width: 20rem; display: inline-block; overflow: auto;">
+                <div class="card-header">Changes</div>
+                <div class="card-body text-danger">
+                <h5 class="card-title">BETA V1.3</h5>
+                <div class="text-dark">
+                    <p class="card-text">Changes:
+                        
+                    </p>
+                </div>
+                <p class="card-text"><small class="text-muted">2022-02-21</small></p>
+                </div>
+            </div>
+        <div class="card mb-3" style="min-height: 650px !important; max-width: 20rem; display: inline-block; overflow: auto;">
+            <div class="card-header">Changes</div>
+            <div class="card-body text-danger">
+            <h5 class="card-title">BETA V1.2</h5>
+            <div class="text-dark">
+                <p class="card-text">Changes:
+                    <ul>
+                        <li class="card-text">Improved <a href="/add" style="color: coral">dashboard</a> stability.</li>
+                    </ul>
+                    <ul>
+                        <li class="card-text">Improved overall speed of page. Now everything should load and appear faster.</li>
+                    </ul>
+                </p>
+            </div>
+            <p class="card-text"><small class="text-muted">2022-02-21</small></p>
+            </div>
+        </div>
+        <div class="card mb-3" style="min-height: 650px !important; max-width: 20rem; display: inline-block; overflow: auto;">
+            <div class="card-header">Changes</div>
+            <div class="card-body text-danger">
+            <h5 class="card-title">BETA V1.1</h5>
+            <div class="text-dark">
+                <p class="card-text">Changes:
+                    <ul>
+                        <li class="card-text">Improved <a href="/add" style="color: coral">dashboard</a>. New message notifications now display in real-time with a 5s delay. </li>
+                    </ul>
+                    <ul>
+                        <li class="card-text">Data collection for <a href="/add" style="color: coral">dashboard</a> now happens during log-in phase, rather than when opening it.</li>
+                    </ul>
+                    <ul>
+                        <li class="card-text">Dashboard and inbox notifications (in the navigation bar) now update in real-time with a 5s delay.</li>
+                    </ul>
+                    <ul>
+                        <li class="card-text">Improved overall stability of the webapp.</li>
+                    </ul>
+                </p>
+                <p class="card-text">Bug fixes:
+                    <ul>
+                        <li class="card-text">Fixed a bug where when users added each other as friends, it would display "-1" in the <a href="/add" style="color: coral">inbox</a> tab.</li>
+                    </ul>
+                </p>
+            </div>
+            <p class="card-text"><small class="text-muted">2022-02-17</small></p>
+            </div>
+        </div>
+        <div class="card mb-3" style="min-height: 650px !important; max-width: 20rem; display: inline-block; overflow: auto;">
+            <div class="card-header">Changes</div>
+            <div class="card-body text-danger">
+            <h5 class="card-title">BETA V1.01</h5>
+            <div class="text-dark">
+                <p class="card-text">Changes:
+                    <ul>
+                        <li class="card-text">Improved how <a href="/add" style="color: coral">Add Friends</a> displays users</li>
+                    </ul>
+                </p>
+                <p class="card-text">Bug fixes:
+                    <ul>
+                        <li class="card-text">Fixed a bug where a new user wouldn't be able to add friends</li>
+                        <li class="card-text">Fixed a bug where a new user wouldn't be able to access <a href="/dashboard" style="color: coral">Dashboard</a></li>
+                    </ul>
+                </p>
+            </div>
+            <p class="card-text"><small class="text-muted">2022-01-30</small></p>
+            </div>
+        </div>
+        <div class="card mb-3" style="min-height: 650px !important; max-width: 20rem; display: inline-block; overflow: auto;">
+            <div class="card-header">Changes</div>
+            <div class="card-body text-danger">
+            <h5 class="card-title">Initial BETA release</h5>
+            <div class="text-dark">
+                <p class="card-text">New:
+                    <ul>
+                        <li class="card-text">Ability to add people as friends.</li>
+                        <li class="card-text">Ability to chat with people.</li>
+                    </ul>
+                </p>
+                <p class="card-text">Bug fixes:
+                    <ul>
+                        <li class="card-text">Messages show correctly according to time sent.</li>
+                    </ul>
+                </p>
+                <p class="card-text">Notes:
+                    <ul>
+                        <li class="card-text">Be sure to let me know if you find any mistakes <a href="/bug_report" style="color: coral">here</a></li>
+                    </ul>
+                </p>
+            </div>
+                <p class="card-text"><small class="text-muted">2022-01-28</small></p>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

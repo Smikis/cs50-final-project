@@ -1,0 +1,36 @@
+{% extends "layout.html"%}
+
+{% block title %}Add friends{% endblock %}
+
+{% block body%}
+<div id="container" style="display: flex; gap: .5rem; width: 100%; margin-left: .5rem; margin-right: .5rem; padding: .5rem; height: fit-content;">
+    <div style="margin: .5rem;">
+        <form action="/add" method="get" onSubmit="return false;">
+            <input class="form-control" id="input_form" autocomplete="off" autofocus placeholder="Enter username" type="text">
+        </form>
+    </div>
+    <div class="table-responsive" style="margin: .5rem; width: 100%">
+        <table id="dtBasicExample" class="table table-bordered table-dark">
+            <thead>
+                <tr>
+                    <th scope="col" style="text-align: center;width: 200px;">Username</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody id="display" style="text-align: center;"></tbody>
+        </table>
+    </div>
+</div>
+<script>
+    load_all_users();
+
+    let input = document.getElementById("input_form");
+    input.addEventListener('keyup', () => {
+        $.get('/search?q=' + input.value, users => {
+            if (document.getElementById("input_form").value.length === 0) load_all_users();
+            else if (users.length > 0) load_users(users);
+            else document.getElementById('display').innerHTML = '<tr><td colspan="2" style="font-style: italic;">No results</td></tr>';
+        });
+    });
+</script>
+{% endblock %}

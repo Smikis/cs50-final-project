@@ -1,0 +1,5 @@
+.azure
+/node_modules
+flask_session
+.venv
+__pycache__

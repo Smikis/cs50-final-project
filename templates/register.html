@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+<div style="display: flex; justify-content: center; padding: 10px 0;">
+    <div>
+        {% if error %}
+            <div style="text-align: center;" class="alert alert-danger alert-dismissible">{{ error }}!
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endif %}
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <div style="text-align: center;" class="alert alert-success alert-dismissible">{{ msg }}! You may now <a class="alert-link" href="/login">log in</a>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor%}
+            {% endif %}
+        {% endwith %}
+        <form method="POST" action="/register">
+            <table>
+                <tr>
+                    <td>
+                        <div class="form-floating mb-3">
+                            <input name="email" type="email" class="form-control" id="floatingEmail" autofocus autocomplete="off" placeholder="name@example.com">
+                            <label for="floatingEmail">Email address</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-floating mb-3">
+                            <input name="username" type="text" class="form-control" id="floatingUsername" autocomplete="off" placeholder="name@example.com">
+                            <label for="floatingUsername">Username</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-floating mb-3">
+                            <input name="password" aria-describedby="passwordHelpBlock" type="password" class="form-control" id="floatingPassword" autocomplete="off" placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-floating mb-3">
+                            <input name="confirm" type="password" class="form-control" id="floatingConfirmPassword" autocomplete="off" placeholder="Confirm Password">
+                            <label for="floatingConfirmPassword">Confirm Password</label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="form-floating mb-3" style="text-align: center;">
+                    
+                <input type="submit" class="btn btn-outline-light" value="Register">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
